@@ -12,6 +12,8 @@ has_toc: false
 This example application shows how to use the DAC with the DMA to generate a X KHz sinusoidal waveform with overtones without CPU intervention.
 
 Added is a Python Programm that allows to create interactively the wavetable.
+Use the follwing command to install neccessary libraries
+ pip install -r requirements.txt 
 
 ![Alt-Text](WaveformGenerator.png)
 
