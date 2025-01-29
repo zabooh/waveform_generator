@@ -9,7 +9,30 @@ has_toc: false
 
 # DAC waveform generation with DMA
 
-This example application shows how to use the DAC with the DMA to generate a 5 KHz sinusoidal waveform without CPU intervention.
+This example application shows how to use the DAC with the DMA to generate a X KHz sinusoidal waveform with overtones without CPU intervention.
+
+Added is a Python Programm that allows to create interactively the wavetable.
+
+![Alt-Text](WaveformGenerator.png)
+
+The Sampliung Rate is configured within the function TC0_TimerInitialize(). Currently it is set to 500kHz.
+
+Here are more examples: 
+
+    /* Configure timer period 
+     *   Clock              = 48MHz
+     *   TC0 Overflow       = 500kHz
+     *   Timer Period Value = (48M / 500kHz) - 1 = 95
+     *   Timer Period Value = (48M / 100kHz) - 1 = 479
+     *   Timer Period Value = (48M /  50kHz) - 1 = 959
+     *   Timer Period Value = (48M /  10kHz) - 1 = 4799
+     */
+    TC0_REGS->COUNT32.TC_CC[0U] = 95U;   // 500kHz
+    //TC0_REGS->COUNT32.TC_CC[0U] = 479U;  // 100kHz
+    //TC0_REGS->COUNT32.TC_CC[0U] = 959U;  //  50kHz
+    //TC0_REGS->COUNT32.TC_CC[0U] = 4799U; //  10kHz
+
+    
 
 ## Description
 
