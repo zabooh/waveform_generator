@@ -1,3 +1,14 @@
+
+#
+# Solve dependencies with:
+#    pip install -r requirements.txt 
+#
+# matplotlib==3.6.3
+# numpy==1.24.1
+# scipy==1.15.1
+#
+#
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.io.wavfile import write
